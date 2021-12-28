@@ -1,0 +1,6 @@
+use geek_library;
+
+CREATE TABLE students (id integer AUTO_INCREMENT PRIMARY KEY, name varchar(255), score int);
+
+insert into students (name, score)
+value ('Petya', 100);
