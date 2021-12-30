@@ -20,7 +20,7 @@ public class StudentController {
     }
 
     //@GetMapping("/students")
-    @RequestMapping("/")
+    //@RequestMapping("/")
     public String shopPage(Model model) {
         List<Student> allStudents = studentService.getAllProducts();
         model.addAttribute("students", allStudents);

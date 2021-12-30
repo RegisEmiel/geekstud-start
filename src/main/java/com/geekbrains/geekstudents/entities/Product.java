@@ -1,7 +1,6 @@
 package com.geekbrains.geekstudents.entities;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Table(name = "products")
@@ -12,11 +11,7 @@ public class Product {
     private Long id;
 
     @ManyToOne
-    @JoinTable(
-            name = "categories",
-            joinColumns = @JoinColumn(name = "product_id"),
-            inverseJoinColumns = @JoinColumn(name = "id")
-    )
+    @JoinColumn(name = "category_id")
     private Category category;
 
     @Column(name = "title")
@@ -71,7 +66,8 @@ public class Product {
         return "Product{" +
                 "id=" + id +
                 ", title='" + title + '\'' +
-                ", price=" + price +
+                ", price=" + price + '\'' +
+                ", category=" + category +
                 '}';
     }
 }
